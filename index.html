@@ -1,5 +1,6 @@
 <html>
 <head>
+<meta charset="UTF-8">
   <title> Formulário de cálculo de área de um triângulo</title>
 </head>
 <script language="JavaScript">
@@ -22,11 +23,18 @@ function calcula(form) {
     var resultado = (237.15 + parseInt(original));
     console.log(resultado);
     form.resultado.value = resultado;
-  }
 
-  else if (op1 == "fahrenheit") {
+  } else if (op1 == "fahrenheit") {
     if (op2 == "celsius") {
       var resultado = ((5.0/9.0)*(original-32.0));
+      console.log(resultado);
+      form.resultado.value = resultado;
+    }
+
+  } else if (op1 == "kelvin") {
+    if (op2 == "celsius") {
+      var resultado = ((5.0/9.0)*(original-32.0));
+      var resultado = (parseInt(original) - 237.15);
       console.log(resultado);
       form.resultado.value = resultado;
     }
