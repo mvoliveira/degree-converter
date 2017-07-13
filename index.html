@@ -18,14 +18,18 @@ function calcula(form) {
       form.resultado.value = resultado;
     }
 
-  else if (op2 == "kelvin") {
-      var resultado = (237.15 + parseInt(original));
+  }else if (op2 == "kelvin") {
+    var resultado = (237.15 + parseInt(original));
+    console.log(resultado);
+    form.resultado.value = resultado;
+  }
+
+  else if (op1 == "fahrenheit") {
+    if (op2 == "celsius") {
+      var resultado = ((5.0/9.0)*(original-32.0));
       console.log(resultado);
       form.resultado.value = resultado;
     }
-  }
-  else {
-    console.log("cu");
   }
 }
 
