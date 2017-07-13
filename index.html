@@ -1,51 +1,56 @@
 <html>
 <head>
-<title> Formulário de cálculo de área de um triângulo</title>
+  <title> Formulário de cálculo de área de um triângulo</title>
 </head>
 <script language="JavaScript">
 function calcula(form) {
- var original = form.graus.value;
- var op1 = document.getElementById("1").value;
- console.log(op1);
- var op2 = document.getElementById("2").value;
- console.log(op2);
- var resultado = 0;
- // if (op1 = "celsius" || op2 = "fahrenheit") {
- // if (op1 = "celsius" || op2 = "fahrenheit") {
- if (op1 = "celsius") {
-   if (op2 = "fahrenheit") {
+  var original = form.graus.value;
+  var op1 = document.getElementById("1").value;
+  console.log(op1);
+  var op2 = document.getElementById("2").value;
+  console.log(op2);
+  var resultado = 0;
 
-   var resultado = 32.0 + ((9.0/5.0) * original);
+  if (op1 == "celsius") {
+    if (op2 == "fahrenheit") {
+      var resultado = 32.0 + ((9.0/5.0) * original);
+      console.log(resultado);
+      form.resultado.value = resultado;
+    }
 
-   console.log(resultado);
-   return resultado;
- }
- }
- form.resultado.value = resultado;
+  else if (op2 == "kelvin") {
+      var resultado = (237.15 + parseInt(original));
+      console.log(resultado);
+      form.resultado.value = resultado;
+    }
+  }
+  else {
+    console.log("cu");
+  }
 }
 
 </script>
 <body>
 
-<form>
-Graus:
-<input type="text" name="graus" /><p/>
-<h1>Escolha opções de conversoes</h1>
-<select id=1 class="" name="options"> De:
-  <option value="celsius">celsius</option>
-  <option value="fahrenheit">Fahrenheit</option>
-  <option value="kelvin">Kelvin</option>
-</select>:
+  <form>
+    Graus:
+    <input type="text" name="graus" /><p/>
+    <h1>Escolha opções de conversoes</h1>
+    <select id=1 class="" name="options"> De:
+      <option value="celsius">celsius</option>
+      <option value="fahrenheit">Fahrenheit</option>
+      <option value="kelvin">Kelvin</option>
+    </select>:
 
-<select id=2 class="" name="options"> Para:
-  <option value="celsius">celsius</option>
-  <option value="fahrenheit">Fahrenheit</option>
-  <option value="kelvin">Kelvin</option>
-</select>:
+    <select id=2 class="" name="options"> Para:
+      <option value="celsius">celsius</option>
+      <option value="fahrenheit">Fahrenheit</option>
+      <option value="kelvin">Kelvin</option>
+    </select>:
 
-<input type="button" value="Calcular" onClick="calcula(this.form)" />
-<input type="reset" value="Limpar" /><p/>
-Temperatura convertida: <input type="text" name="resultado" />
-</form>
+    <input type="button" value="Calcular" onClick="calcula(this.form)" />
+    <input type="reset" value="Limpar" /><p/>
+    Temperatura convertida: <input type="text" name="resultado" />
+  </form>
 </body>
 </html>
